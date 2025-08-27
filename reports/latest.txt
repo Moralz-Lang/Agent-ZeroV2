@@ -1,0 +1,8 @@
+[
+  {
+    "file": "rules/static/sample-configs/mysql.cnf",
+    "match": null,
+    "rule": null,
+    "note": "missing"
+  }
+]

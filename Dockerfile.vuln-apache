@@ -1,0 +1,12 @@
+FROM ubuntu:22.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && \
+    apt-get install -y apache2 php libapache2-mod-php curl && \
+    rm -rf /var/lib/apt/lists/*
+
+# simple echo endpoint: /index.php?payload=...
+RUN bash -lc 'printf "%s\n" "<?php echo \"OK:\" . (\$_GET[\"payload\"] ?? \"none\"); ?>" > /var/www/html/index.php'
+
+EXPOSE 80
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+

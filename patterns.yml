@@ -1,0 +1,10 @@
+patterns:
+  - id: SSL_WEAK_PROTOCOL
+    regex: "(?i)SSLv2|SSLv3"
+    description: "Weak SSL protocol detected"
+  - id: APACHE_DIR_LISTING
+    regex: "(?i)Options\\s+Indexes"
+    description: "Apache directory listing enabled"
+  - id: ANY_ALLOWOVERRIDE_NONE
+    regex: "(?i)AllowOverride\\s+None"
+    description: "Apache may disable .htaccess overrides"

@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.vuln-apache
+    image: vuln-apache
+    container_name: lab-web
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+

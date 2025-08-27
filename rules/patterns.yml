@@ -1,0 +1,12 @@
+patterns:
+  - id: buffer_overflow
+    regex: "buffer_overflow_payload"
+    description: "Detects basic buffer overflow payload markers"
+
+  - id: sql_injection
+    regex: "(?i)(union select|drop table|or 1=1)"
+    description: "Detects basic SQL injection attempts"
+
+  - id: xss
+    regex: "(?i)(<script>|onerror=|javascript:)"
+    description: "Detects potential XSS attempts"

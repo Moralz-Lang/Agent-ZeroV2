@@ -1,0 +1,10 @@
+docker==7.1.0
+requests==2.32.3
+faiss-cpu==1.8.0.post1
+sentence-transformers==3.0.1
+numpy==1.26.4
+regex==2024.7.24
+PyYAML==6.0.2
+paramiko==3.4.0
+bandit==1.7.9
+
