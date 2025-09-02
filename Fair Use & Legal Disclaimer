@@ -1,0 +1,47 @@
+
+# ⚖️ Fair Use & Legal Disclaimer
+
+## 🚨 Educational Use Only
+
+This **Local AI Vulnerability Scanning Agent** is **strictly intended for educational, research, and training purposes**. By using this software, you agree to adhere to **ethical and legal standards**.
+
+**Do NOT** use this tool for:
+
+* Unauthorized penetration testing
+* Attacking production systems without explicit permission
+* Exploiting vulnerabilities for personal gain
+
+---
+
+## ⚖️ Legal Disclaimer
+
+* The author and contributors of this repository **cannot be held responsible** for any misuse of this software.
+* You are fully responsible for ensuring that your use of this software complies with all applicable laws and regulations in your jurisdiction.
+* Any modifications, misuse, or illegal activity performed using this software **are solely the responsibility of the user**.
+
+---
+
+## 📚 Fair Use Guidelines
+
+* Use this tool in **isolated lab environments** (e.g., Docker containers, local VMs, test servers).
+* Always use **simulation-only payloads** (`simulation_only: true`) when experimenting.
+* This software is intended to **help learn about CVEs, vulnerability patterns, and semantic classification** – not to compromise real systems.
+
+---
+
+## 🔒 Recommended Safety Practices
+
+* Never run against live production servers.
+* Test in **controlled environments** like XAMPP, LAMP, or Docker-based vulnerable web apps.
+* Regularly review generated payloads to ensure **simulation-only behavior** is intact.
+
+---
+
+### ✅ Summary
+
+By using this repository, you acknowledge that:
+
+* You are responsible for your actions
+* You will **only use this software for education, research, or training**
+* The author is **not liable for illegal or unethical use**
+
