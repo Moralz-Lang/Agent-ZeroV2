@@ -1,0 +1,187 @@
+### 1️⃣ CVE JSON Size Problems
+
+* Right now, your agent downloads the **recent CVE feed** (`recent.json`) and keeps it in `data/nvd/`.
+* The current file size is \~3 MB, but the **full NVD feed** for all CVEs can grow **hundreds of MBs** (or even a few GBs over years).
+* If your agent keeps downloading **all historical CVEs** without cleanup, your `data/nvd/` folder will grow steadily.
+
+**Mitigation:**
+
+* Keep only the **recent feed** or a **rolling window** of, say, 1–2 years.
+* Periodically remove or archive older JSON files.
+
+---
+
+### 2️⃣ Pattern YAML Growth
+
+* Each CVE that matches your keywords generates a **YAML pattern** in `rules/patterns.yml`.
+* If your agent generates patterns for every single CVE, this file can grow very large (tens of thousands of patterns).
+* Very large YAML files can **slow down loading and regex compilation**.
+
+**Mitigation:**
+
+* Keep **patterns limited to relevant software/versions** using `TARGET_SOFTWARE` and version filtering.
+* Consider **splitting patterns** into multiple YAML files per type (`xss.yml`, `sql.yml`, `rce.yml`) for modular loading.
+
+---
+
+### 3️⃣ FAISS Index
+
+* FAISS stores embeddings for semantic search. Each CVE added to the index increases memory usage.
+* If the index grows too large (hundreds of thousands of CVEs), **RAM usage can spike**.
+
+**Mitigation:**
+
+* Limit FAISS to **active/relevant CVEs** instead of the full historical set.
+* FAISS allows **disk-based indices** to avoid excessive RAM usage.
+
+---
+
+### 4️⃣ Logs
+
+* Cron jobs write logs daily. If not rotated, logs can consume disk space.
+
+**Mitigation:**
+
+* Set up **log rotation**: `logrotate` or a simple script to keep the last N logs.
+* Example for Linux:
+
+```bash
+# Rotate daily, keep last 7 logs
+/home/vboxuser/local-ai-agent/logs/*.log {
+    daily
+    rotate 7
+    compress
+    missingok
+    notifempty
+}
+```
+
+---
+
+### ✅ Summary
+
+* **Short-term:** No immediate concern. Your current recent.json, patterns.yml, and FAISS index are small.
+* **Long-term:** Monitor disk and memory usage if you plan to **store all CVEs indefinitely**.
+* **Best practices:**
+
+  * Limit historical data
+  * Split large YAML files
+  * Use FAISS disk-based storage for very large indices
+  * Rotate logs
+
+---
+
+Absolutely! You can set up **automatic cleanup and archiving** to keep your CVE JSON, pattern files, and logs fresh, without touching the most recent ones. Here’s a structured approach:
+
+---
+
+## **1️⃣ Decide What to Keep and What to Archive/Delete**
+
+* **Recent CVEs** → Keep last `N` days (e.g., 30 days).
+* **Older CVEs** → Archive to another folder (`archive/`) or delete.
+* **Logs** → Keep last `N` files or last `N` days.
+* **Patterns** → Only regenerate from recent CVEs; old YAML patterns can be pruned automatically if they are no longer relevant.
+
+---
+
+## **2️⃣ Use a Python Script for Cleanup**
+
+You can create a script, e.g., `cleanup_old_files.py`:
+
+```python
+#!/usr/bin/env python3
+import os
+import shutil
+from pathlib import Path
+from datetime import datetime, timedelta
+
+# Folders
+DATA_DIR = Path("data/nvd")
+ARCHIVE_DIR = Path("data/archive")
+LOG_DIR = Path("logs")
+
+# Settings
+DAYS_TO_KEEP = 30  # keep files newer than this
+LOG_DAYS_TO_KEEP = 7
+
+def cleanup_directory(directory: Path, days: int, archive: Path = None):
+    now = datetime.now()
+    for file in directory.iterdir():
+        if file.is_file():
+            file_time = datetime.fromtimestamp(file.stat().st_mtime)
+            if now - file_time > timedelta(days=days):
+                if archive:
+                    archive.mkdir(parents=True, exist_ok=True)
+                    shutil.move(str(file), archive / file.name)
+                    print(f"[+] Archived {file.name} to {archive}")
+                else:
+                    file.unlink()
+                    print(f"[+] Deleted {file.name}")
+
+if __name__ == "__main__":
+    # Archive old CVE JSONs
+    cleanup_directory(DATA_DIR, DAYS_TO_KEEP, ARCHIVE_DIR)
+    
+    # Delete old logs
+    cleanup_directory(LOG_DIR, LOG_DAYS_TO_KEEP)
+```
+
+**✅ How it works:**
+
+* Looks at **modification time** (`mtime`) of each file
+* If older than `DAYS_TO_KEEP`, either **move to archive** or **delete**
+* Keeps recent files untouched
+
+---
+
+## **3️⃣ Schedule with Cron**
+
+To run automatically, add to crontab:
+
+```bash
+# Clean old CVE JSONs and logs daily at 02:00
+0 2 * * * /home/vboxuser/local-ai-agent/venv/bin/python /home/vboxuser/local-ai-agent/cleanup_old_files.py >> /home/vboxuser/local-ai-agent/logs/cleanup.log 2>&1
+```
+
+* Ensure `logs/` and `data/archive/` exist.
+
+---
+
+## **4️⃣ Optional Enhancements**
+
+1. **Compress archived files** to save space:
+
+```python
+shutil.make_archive(str(archive / file.stem), 'zip', root_dir=str(directory), base_dir=file.name)
+file.unlink()  # remove original after compression
+```
+
+2. **Separate archives by month**:
+
+```bash
+archive/YYYY-MM/
+```
+
+3. **Email or notify** if cleanup fails or disk is over threshold.
+
+---
+
+## **5️⃣ Best Practices**
+
+* Always **keep the most recent file** untouched
+* Test the script manually before automating
+* Keep **archive folder outside your active agent directories**
+* Consider **FAISS index pruning** if embedding vectors get too large (older CVEs removed from index)
+
+---
+
+If you want, I can write a **fully integrated version** of this cleanup that:
+
+* Archives old CVE JSONs into monthly folders
+* Prunes old patterns from YAML (without deleting recent CVEs)
+* Rotates logs
+* Optionally updates FAISS index after cleanup
+
+**This would make your agent fully **self-maintaining** and never overloaded.**
+
+
