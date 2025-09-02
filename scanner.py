@@ -5,7 +5,23 @@ from pathlib import Path
 def load_patterns(path: Path):
     with open(path, "r", encoding="utf-8") as f:
         y = yaml.safe_load(f)
-    return [(re.compile(p["regex"]), p) for p in y.get("patterns", [])]
+
+    patterns = []
+    for p in y.get("patterns", []):
+        # Old style regex key
+        if "regex" in p:
+            try:
+                patterns.append((re.compile(p["regex"]), p))
+            except re.error as e:
+                print(f"[!] Invalid regex in pattern {p.get('name', 'unknown')}: {e}")
+        # New style payloads
+        for payload in p.get("payloads", []):
+            try:
+                patterns.append((re.compile(payload), p))
+            except re.error as e:
+                print(f"[!] Invalid regex in pattern {p.get('name', 'unknown')}: {e}")
+    return patterns
+
 
 def scan_files(files, patterns):
     findings = []

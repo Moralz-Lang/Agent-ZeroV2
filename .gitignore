@@ -2,3 +2,9 @@ __pycache__/
 *.pyc
 .env
 venv/
+# Ignore logs and reports
+logs/
+reports/
+
+# Ignore OS files
+.DS_Store

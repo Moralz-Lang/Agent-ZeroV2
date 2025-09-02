@@ -1,0 +1,11 @@
+venv
+data/index
+data/*.index
+data/*.bin
+logs
+*.log
+.rules
+.git
+.gitignore
+__pycache__
+*.pyc

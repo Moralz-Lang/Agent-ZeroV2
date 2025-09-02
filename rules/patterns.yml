@@ -1,12 +1,3032 @@
 patterns:
-  - id: buffer_overflow
-    regex: "buffer_overflow_payload"
-    description: "Detects basic buffer overflow payload markers"
+- name: CVE-2025-54300
+  description: A stored XSS vulnerability in Quantum Manager component 1.0.0-3.2.0
+    for Joomla was discovered. The SVG upload feature do...
+  payloads: &id001
+  - <script>alert(1)</script>
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54301
+  description: A stored XSS vulnerability in Quantum Manager component 1.0.0-3.2.0
+    for Joomla was discovered. File names are not proper...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-39923
+  description: An issue was discovered in Mahara 24.04 before 24.04.2 and 23.04 before
+    23.04.7. The About, Contact, and Help footer lin...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-26467
+  description: Privilege Defined With Unsafe Actions vulnerability in Apache Cassandra.
+    An user with MODIFY permission ON ALL KEYSPACES...
+  payloads: &id002
+  - <?php system('id'); ?>
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-43960
+  description: Adminer 4.8.1, when using Monolog for logging, allows a Denial of Service
+    (memory consumption) via a crafted serialized ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-45968
+  description: An issue in System PDV v1.0 allows a remote attacker to obtain sensitive
+    information via the hash parameter in a URL. Th...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-46411
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48005
+  description: A heap-based buffer overflow vulnerability exists in the RHS2000 parsing
+    functionality of The Biosig Project libbiosig 3...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-52581
+  description: An integer overflow vulnerability exists in the GDF parsing functionality
+    of The Biosig Project libbiosig 3.9.0 and Mast...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53511
+  description: A heap-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9....
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53518
+  description: An integer overflow vulnerability exists in the ABF parsing functionality
+    of The Biosig Project libbiosig 3.9.0 and Mast...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53557
+  description: A heap-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9....
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53853
+  description: A heap-based buffer overflow vulnerability exists in the ISHNE parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54462
+  description: A heap-based buffer overflow vulnerability exists in the Nex parsing
+    functionality of The Biosig Project libbiosig 3.9.0...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54480
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54481
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54482
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54483
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54484
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54485
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54486
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54487
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54488
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54489
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54490
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54491
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54492
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54493
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54494
+  description: A stack-based buffer overflow vulnerability exists in the MFER parsing
+    functionality of The Biosig Project libbiosig 3.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-29521
+  description: Insecure default credentials for the Adminsitrator account of D-Link
+    DSL-7740C with firmware DSL7740C.V6.TR069.20211230 ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-32468
+  description: A memory corruption vulnerability exists in the BMPv3 Image Decoding
+    functionality of the SAIL Image Decoding Library v0...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-35984
+  description: A memory corruption vulnerability exists in the PCX Image Decoding
+    functionality of the SAIL Image Decoding Library v0.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-44179
+  description: Hitron CGNF-TWN 3.1.1.43-TWN-pre3 contains a command injection vulnerability
+    in the telnet service. The issue arises due...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-46407
+  description: A memory corruption vulnerability exists in the BMPv3 Palette Decoding
+    functionality of the SAIL Image Decoding Library ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50129
+  description: A memory corruption vulnerability exists in the PCX Image Decoding
+    functionality of the SAIL Image Decoding Library v0.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50900
+  description: An issue was discovered in getrebuild/rebuild 4.0.4. The affected source
+    code class is com.rebuild.web.RebuildWebInterce...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-52456
+  description: A memory corruption vulnerability exists in the WebP Image Decoding
+    functionality of the SAIL Image Decoding Library v0....
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-52930
+  description: A memory corruption vulnerability exists in the BMPv3 RLE Decoding
+    functionality of the SAIL Image Decoding Library v0.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53085
+  description: A memory corruption vulnerability exists in the PSD RLE Decoding functionality
+    of the SAIL Image Decoding Library v0.9.8...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53510
+  description: A memory corruption vulnerability exists in the PSD Image Decoding
+    functionality of the SAIL Image Decoding Library v0.9...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-56212
+  description: phpgurukul Hospital Management System 4.0 is vulnerable to SQL Injection
+    in add-doctor.php via the docname parameter....
+  payloads: &id003
+  - ''' OR ''1''=''1'
+  - '''; DROP TABLE users; --'
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-56214
+  description: phpgurukul Hospital Management System 4.0 is vulnerable to SQL Injection
+    in index.php via the username parameter....
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-56215
+  description: phpgurukul Hospital Management System 4.0 is vulnerable to SQL Injection
+    in contact.php via the pagetitle parameter....
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-56216
+  description: phpgurukul Hospital Management System 4.0 is vulnerable to SQL Injection
+    in about-us.php via the pagetitle parameter....
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-5302
+  description: A denial of service vulnerability exists in the JSONReader component
+    of the run-llama/llama_index repository, specifical...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-3478
+  description: A Stored Cross-Site Scripting (XSS) vulnerability has been identified
+    in OpenText Enterprise Security Manager. The vulne...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55409
+  description: FoxCMS 1.2.6, there is a Cross Site Scripting vulnerability in /index.php/article.
+    This allows attackers to execute arbi...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55574
+  description: Cross Site Scripting vulnerability in docmost v.0.21.0 and before allows
+    an attacker to execute arbitrary code...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55575
+  description: SQL Injection vulnerability in SMM Panel 3.1 allowing remote attackers
+    to gain sensitive information via a crafted HTTP ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50722
+  description: Insecure Permissions vulnerability in sparkshop v.1.1.7 allows a remote
+    attacker to execute arbitrary code via the Commo...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53120
+  description: A path traversal vulnerability in unauthenticated upload functionality
+    allows a malicious actor to upload binaries and s...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57760
+  description: Langflow is a tool for building and deploying AI-powered agents and
+    workflows. A privilege escalation vulnerability exis...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57772
+  description: DataEase is an open source business intelligence and data visualization
+    tool. Prior to version 2.10.12, there is a H2 JD...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57773
+  description: DataEase is an open source business intelligence and data visualization
+    tool. Prior to version 2.10.12, because DB2 para...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9410
+  description: A weakness has been identified in lostvip-com ruoyi-go up to 2.1. The
+    affected element is the function SelectListByPage ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9411
+  description: A security vulnerability has been detected in lostvip-com ruoyi-go
+    up to 2.1. The impacted element is the function Selec...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50383
+  description: alextselegidis Easy!Appointments v1.5.1 was discovered to contain a
+    SQL injection vulnerability via the order_by paramet...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57811
+  description: Craft is a platform for creating digital experiences. From versions
+    4.0.0-RC1 to 4.16.5 and 5.0.0-RC1 to 5.8.6, there is...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9412
+  description: A vulnerability was detected in lostvip-com ruoyi-go up to 2.1. This
+    affects the function SelectListByPage of the file m...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9413
+  description: A flaw has been found in lostvip-com ruoyi-go up to 2.1. This impacts
+    the function SelectListByPage of the file modules/...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-52130
+  description: File upload vulnerability in WebErpMesv2 1.17 in the app/Http/Controllers/FactoryController.php
+    controller. This flaw al...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9417
+  description: A weakness has been identified in itsourcecode Apartment Management
+    System 1.0. This issue affects some unknown processi...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-6188
+  description: On affected platforms running Arista EOS, maliciously formed UDP packets
+    with source port 3503 may be accepted by EOS. U...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9418
+  description: A security vulnerability has been detected in itsourcecode Apartment
+    Management System 1.0. Impacted is an unknown funct...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9419
+  description: A vulnerability was detected in itsourcecode Apartment Management System
+    1.0. The affected element is an unknown functio...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57809
+  description: XGrammar is an open-source library for efficient, flexible, and portable
+    structured generation. Prior to version 0.1.21,...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9420
+  description: A flaw has been found in itsourcecode Apartment Management System 1.0.
+    The impacted element is an unknown function of th...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9421
+  description: A vulnerability has been found in itsourcecode Apartment Management
+    System 1.0. This affects an unknown function of the ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9423
+  description: A vulnerability was determined in Campcodes Online Water Billing System
+    1.0. Affected is an unknown function of the file...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9425
+  description: A security flaw has been discovered in itsourcecode Online Tour and
+    Travel Management System 1.0. Affected by this issue...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9426
+  description: A weakness has been identified in itsourcecode Online Tour and Travel
+    Management System 1.0. This affects an unknown par...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9444
+  description: A vulnerability has been found in 1000projects Online Project Report
+    Submission and Evaluation System 1.0. This issue af...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9172
+  description: "The Vibes plugin for WordPress is vulnerable to time-based SQL Injection\
+    \ via the \u2018resource\u2019 parameter in all versions up..."
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9468
+  description: A security vulnerability has been detected in itsourcecode Apartment
+    Management System 1.0. Affected by this vulnerabili...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9469
+  description: A vulnerability was detected in itsourcecode Apartment Management System
+    1.0. Affected by this issue is some unknown fun...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9470
+  description: A flaw has been found in itsourcecode Apartment Management System 1.0.
+    This affects an unknown part of the file /managem...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9471
+  description: A vulnerability has been found in itsourcecode Apartment Management
+    System 1.0. This vulnerability affects unknown code ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9472
+  description: A vulnerability was found in itsourcecode Apartment Management System
+    1.0. This issue affects some unknown processing of...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9473
+  description: A security vulnerability has been detected in SourceCodester Online
+    Bank Management System 1.0. This impacts an unknown ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9475
+  description: A flaw has been found in SourceCodester Human Resource Information
+    System 1.0. Affected by this vulnerability is an unkn...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9476
+  description: A vulnerability has been found in SourceCodester Human Resource Information
+    System 1.0. Affected by this issue is some u...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-1501
+  description: An access control vulnerability was discovered in the Request Trace
+    and Download Trace functionalities of CMC before 25....
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53811
+  description: "The configuration of Mosh-Pro on macOS, specifically the \"RunAsNode\"\
+    \ fuse enabled, allows a\_local attacker with unprivil..."
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53813
+  description: "The configuration of Nozbe on macOS, specifically the \"RunAsNode\"\
+    \ fuse enabled, allows a\_local attacker with unprivilege..."
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-7775
+  description: Memory overflow vulnerability leading to Remote Code Execution and/or
+    Denial of Service in NetScaler ADC and NetScaler G...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-8597
+  description: MacVim's configuration on macOS, specifically the presence of entitlement
+    "com.apple.security.get-task-allow", allows lo...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-8700
+  description: Invoice Ninja's configuration on macOS, specifically the presence of
+    entitlement "com.apple.security.get-task-allow", al...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9190
+  description: The configuration of Cursor on macOS, specifically the "RunAsNode"
+    fuse enabled, allows a local attacker with unprivileg...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-45753
+  description: In Mahara 23.04.8 and 24.04.4, the external RSS feed block can cause
+    XSS if the external feed XML has a malicious value ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-25734
+  description: Kapsch TrafficCom RIS-9160 & RIS-9260 Roadside Units (RSUs) v3.2.0.829.23,
+    v3.8.0.1119.42, and v4.6.0.1211.28 was discov...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-25737
+  description: Kapsch TrafficCom RIS-9160 & RIS-9260 Roadside Units (RSUs) v3.2.0.829.23,
+    v3.8.0.1119.42, and v4.6.0.1211.28 were disco...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-52035
+  description: A vulnerability in NotesCMS and specifically in the page /index.php?route=notes.
+    The manipulation of the title of the se...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-52036
+  description: A vulnerability has been found in NotesCMS and classified as medium.
+    Affected by this vulnerability is the page /index.p...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-52037
+  description: A vulnerability has been found in NotesCMS and classified as medium.
+    Affected by this vulnerability is the page /index.p...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-56432
+  description: A cross-site scripting (XSS) vulnerability exists in Nagios XI 2024R2.
+    The vulnerability allows remote attackers to exec...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-1994
+  description: "IBM Cognos Command Center 10.2.4.1 and 10.2.5 \n\n\n\ncould allow\
+    \ a local user to execute arbitrary code on the system due t..."
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55212
+  description: ImageMagick is free and open-source software used for editing and manipulating
+    digital images. Prior to versions 6.9.13-...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57425
+  description: A Stored Cross-Site Scripting (XSS) vulnerability in SourceCodester
+    FAQ Management System 1.0 allows an authenticated at...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9491
+  description: Microsoft Windows LNK File UI Misrepresentation Remote Code Execution
+    Vulnerability. This vulnerability allows remote at...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50976
+  description: IPFire 2.29 DNS management interface (dns.cgi) fails to properly sanitize
+    user-supplied input in the NAMESERVER, REMARK,...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55298
+  description: ImageMagick is free and open-source software used for editing and manipulating
+    digital images. Prior to ImageMagick vers...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57803
+  description: ImageMagick is free and open-source software used for editing and manipulating
+    digital images. Prior to versions 6.9.13-...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50975
+  description: IPFire 2.29 web-based firewall interface (firewall.cgi) fails to sanitize
+    several rule parameters such as PROT, SRC_PORT...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-52353
+  description: An arbitrary code execution vulnerability in Badaso CMS 2.9.11. The
+    Media Manager allows authenticated users to upload f...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55443
+  description: Telpo MDM 1.4.6 thru 1.4.9 for Android contains sensitive administrator
+    credentials and MQTT server connection details (...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-35203
+  description: Mahara before 22.10.6, 23.04.6, and 24.04.1 allows cross-site scripting
+    (XSS) via a file, with JavaScript code as part o...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9492
+  description: A vulnerability was determined in Campcodes Online Water Billing System
+    1.0. This affects an unknown function of the fil...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-49740
+  description: In multiple locations, there is a possible crash loop due to resource
+    exhaustion. This could lead to local denial of ser...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-0074
+  description: In process_service_attr_rsp of sdp_discovery.cc, there is a possible
+    way to execute arbitrary code due to a use after fr...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-0075
+  description: In process_service_search_attr_req of sdp_server.cc, there is a possible
+    way to execute arbitrary code due to a use afte...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-0084
+  description: In multiple locations, there is a possible out of bounds write due
+    to a use after free. This could lead to remote code e...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-22403
+  description: In sdp_snd_service_search_req of sdp_discovery.cc, there is a possible
+    way to execute arbitrary code due to a use after ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-22404
+  description: In avct_lcb_msg_ind of avct_lcb_act.cc, there is a possible way to
+    execute arbitrary code due to a use after free. This ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-22405
+  description: In multiple locations, there is a possible way to execute arbitrary
+    code due to a use after free. This could lead to loc...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-22407
+  description: In hidd_check_config_done of hidd_conn.cc, there is a possible way
+    to execute arbitrary code due to a use after free. Th...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-22408
+  description: In rfc_check_send_cmd of rfc_utils.cc, there is a possible way to execute
+    arbitrary code due to a use after free. This c...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-22409
+  description: In rfc_send_buf_uih of rfc_ts_frames.cc, there is a possible way to
+    execute arbitrary code due to a use after free. This...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-22410
+  description: In multiple locations, there is a possible way to execute arbitrary
+    code due to a use after free. This could lead to loc...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-35113
+  description: Agiloft Release 28 does not properly neutralize special elements used
+    in an EUI template engine, allowing an authenticat...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9277
+  description: "The SiteSEO \u2013 SEO Simplified plugin for WordPress is vulnerable\
+    \ to Stored Cross-Site Scripting via the broken preg_repla..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-8490
+  description: The All-in-One WP Migration and Backup plugin for WordPress is vulnerable
+    to Stored Cross-Site Scripting via the Import ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-7732
+  description: "The Lazy Load for Videos plugin for WordPress is vulnerable to Stored\
+    \ Cross-Site Scripting via its lazy\u2011loading handlers..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9502
+  description: A weakness has been identified in Campcodes Online Loan Management
+    System 1.0. This impacts an unknown function of the f...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9503
+  description: A security vulnerability has been detected in Campcodes Online Loan
+    Management System 1.0. Affected is an unknown functi...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-49035
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in chaimchaikin Admin...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-49039
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in mibuthu Link View ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9504
+  description: A vulnerability was detected in Campcodes Online Loan Management System
+    1.0. Affected by this vulnerability is an unknow...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9505
+  description: A flaw has been found in Campcodes Online Loan Management System 1.0.
+    Affected by this issue is some unknown functionali...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9506
+  description: A vulnerability has been found in Campcodes Online Loan Management
+    System 1.0. This affects an unknown part of the file ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9507
+  description: A weakness has been identified in itsourcecode Apartment Management
+    System 1.0. Impacted is an unknown function of the f...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9508
+  description: A vulnerability was detected in itsourcecode Apartment Management System
+    1.0. The impacted element is an unknown functio...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9509
+  description: A security flaw has been discovered in itsourcecode Apartment Management
+    System 1.0. This issue affects some unknown pro...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9510
+  description: A security vulnerability has been detected in itsourcecode Apartment
+    Management System 1.0. The affected element is an u...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57846
+  description: "Multiple i-\u30D5\u30A3\u30EB\u30BF\u30FC products contain an issue\
+    \ with incorrect default permissions. If this vulnerability is exploited, a loc..."
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9511
+  description: A vulnerability was identified in itsourcecode Apartment Management
+    System 1.0. This vulnerability affects unknown code ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-2313
+  description: In the Print.pl service, the "uhcPrintServerPrint" function allows
+    execution of arbitrary code via the "CopyCounter" par...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-30036
+  description: "Stored XSS vulnerability exists in the \"Oddzia\u0142\" (Ward) module,\
+    \ in the death diagnosis description field, and allows the..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-30038
+  description: The vulnerability consists of a session ID leak when saving a file
+    downloaded from CGM CLININET. The identifier is expos...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-30055
+  description: The "system" function receives untrusted input from the user. If the
+    "EnableJSCaching" option is enabled, it is possible...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-30056
+  description: The RunCommand function accepts any parameter, which is then passed
+    for execution in the shell. This allows an attacker ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-30057
+  description: In UHCRTFDoc, the filename parameter can be exploited to execute arbitrary
+    code via command injection into the system() ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-30058
+  description: In the PatientService.pl service, the "getPatientIdentifier" function
+    is vulnerable to SQL injection through the "pesel"...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-30059
+  description: In the PrepareCDExportJSON.pl service, the "getPerfServiceIds" function
+    is vulnerable to SQL injection....
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-30060
+  description: In the ReturnUserUnitsXML.pl service, the "getUserInfo" function is
+    vulnerable to SQL injection through the "UserID" par...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-30061
+  description: In the "utils/Reporter/OpenReportWindow.pl" service, there is an SQL
+    injection vulnerability through the "UserID" parame...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-43729
+  description: Dell ThinOS 10, versions prior to 2508_10.0127, contains an Incorrect
+    Permission Assignment for Critical Resource vulner...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9531
+  description: A vulnerability was detected in Portabilis i-Educar up to 2.10. This
+    affects an unknown function of the file /intranet/a...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9532
+  description: A flaw has been found in Portabilis i-Educar up to 2.10. This impacts
+    an unknown function of the file /RegraAvaliacao/vi...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50972
+  description: SQL Injection vulnerability in AbanteCart 1.4.2, allows unauthenticated
+    attackers to execute arbitrary SQL commands via ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50985
+  description: diskover-web v2.3.0 Community Edition is vulnerable to multiple reflected
+    cross-site scripting (XSS) flaws in its web in...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50986
+  description: diskover-web v2.3.0 Community Edition suffers from multiple stored
+    cross-site scripting (XSS) vulnerabilities in its adm...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50989
+  description: OPNsense 25.1 contains an authenticated command injection vulnerability
+    in its Bridge Interface Edit endpoint (interface...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-52122
+  description: Freeform 5.0.0 to before 5.10.16, a plugin for CraftCMS, contains an
+    Server-side template injection (SSTI) vulnerability...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50978
+  description: In Gitblit v1.7.1, a reflected cross-site scripting (XSS) vulnerability
+    exists in the way repository path names are hand...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50983
+  description: SQL Injection vulnerability exists in the sortKey parameter of the
+    GET /api/v1/wanted/cutoff API endpoint in readarr 0.4...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50984
+  description: diskover-web v2.3.0 Community Edition is vulnerable to multiple boolean-based
+    blind SQL injection flaws in its Elasticse...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-20296
+  description: A vulnerability in the web-based management interface of Cisco UCS
+    Manager Software could allow an authenticated, remote...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-20342
+  description: A vulnerability in the Virtual Keyboard Video Monitor (vKVM) connection
+    handling of Cisco Integrated Management Controll...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-34157
+  description: Coolify versions prior to v4.0.0-beta.420.6 are vulnerable to a stored
+    cross-site scripting (XSS) attack in the project ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-34159
+  description: Coolify versions prior to v4.0.0-beta.420.6 are vulnerable to a remote
+    code execution vulnerability in the application d...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-34161
+  description: Coolify versions prior to v4.0.0-beta.420.7 are vulnerable to a remote
+    code execution vulnerability in the project deplo...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50977
+  description: A template injection vulnerability leading to reflected cross-site
+    scripting (XSS) has been identified in version 1.7.1,...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-5187
+  description: A vulnerability exists in the NodeRestriction admission controller
+    in Kubernetes clusters where node users can delete th...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-50979
+  description: NodeBB v4.3.0 is vulnerable to SQL injection in its search-categories
+    API endpoint (/api/v3/search/categories). The sear...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-51667
+  description: An issue was discovered in simple-admin-core v1.2.0 thru v1.6.7. The
+    /sys-api/role/update interface in the simple-admin-...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55422
+  description: In FoxCMS 1.2.6, there is a reflected Cross Site Scripting (XSS) vulnerability
+    in /index.php/plus....
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58194
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in boldthemes Bold Pa...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58195
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in Xpro Xpro Elemento...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58196
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in uicore UiCore Elem...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58197
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in mra13 / Team Tips ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58205
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in Element Invader El...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58208
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in add-ons.org PDF fo...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58209
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in rtCamp Transcoder ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58211
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in alexvtn Chatbox Ma...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58212
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in epeken Epeken All ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58213
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in ameliabooking Book...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58216
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in jgwhite33 WP Thumb...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58217
+  description: Cross-Site Request Forgery (CSRF) vulnerability in GeroNikolov Instant
+    Breaking News allows Stored XSS. This issue affec...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-37777
+  description: O2OA v9.0.3 was discovered to contain a remote code execution (RCE)
+    vulnerability via the mainOutput() function....
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55582
+  description: D-Link DCS-825L firmware v1.08.01 contains a vulnerability in the watchdog
+    script `mydlink-watch-dog.sh`, which blindly ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2023-7308
+  description: SecGate3600, a network firewall product developed by NSFOCUS, contains
+    a sensitive information disclosure vulnerability ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2023-7309
+  description: A path traversal vulnerability exists in the Dahua Smart Park Integrated
+    Management Platform (also referred to as the Da...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-13979
+  description: "A SQL injection vulnerability exists in the St. Joe ERP system (\"\
+    \u5723\u4E54ERP\u7CFB\u7EDF\") that allows unauthenticated remote attackers ..."
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-13981
+  description: LiveBOS, an object-oriented business architecture middleware suite
+    developed by Apex Software Co., Ltd., contains an arb...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-13984
+  description: QiAnXin TianQing Management Center versions up to and including 6.7.0.4130
+    contain a path traversal vulnerability in the...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-34160
+  description: AnyShare contains a critical unauthenticated remote code execution
+    vulnerability in the ServiceAgent API exposed on port...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-34162
+  description: An unauthenticated SQL injection vulnerability exists in the GetLyfsByParams
+    endpoint of Bian Que Feijiu Intelligent Eme...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-34163
+  description: Dongsheng Logistics Software exposes an unauthenticated endpoint at
+    /CommMng/Print/UploadMailFile that fails to enforce ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-34521
+  description: A reflected cross-site scripting (XSS) vulnerability exists in the
+    web interface of the Arcserve Unified Data Protection...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-34522
+  description: A heap-based buffer overflow vulnerability exists in the input parsing
+    logic of Arcserve Unified Data Protection (UDP). ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-34523
+  description: A heap-based buffer overflow vulnerability exists in the exists in
+    the network-facing input handling routines of Arcserv...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-8897
+  description: "The Beaver Builder \u2013 WordPress Page Builder plugin for WordPress\
+    \ is vulnerable to Reflected Cross-Site Scripting via the..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9344
+  description: "The UsersWP \u2013 Front-end login form, User Registration, User Profile\
+    \ & Members Directory plugin for WP plugin for WordPre..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9352
+  description: The Pronamic Google Maps plugin for WordPress is vulnerable to Stored
+    Cross-Site Scripting via the description field in ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-9648
+  description: The WP ULike Pro plugin for WordPress is vulnerable to arbitrary file
+    uploads due to insufficient file type validation i...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-8603
+  description: The Unlimited Elements For Elementor plugin for WordPress is vulnerable
+    to Stored Cross-Site Scripting via several widge...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9346
+  description: The Booking Calendar plugin for WordPress is vulnerable to Stored Cross-Site
+    Scripting via settings in all versions up t...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-8977
+  description: The Simple Download Monitor plugin for WordPress is vulnerable to time-based
+    SQL Injection via the order parameter in al...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-6255
+  description: The Dynamic AJAX Product Filters for WooCommerce plugin for WordPress
+    is vulnerable to Stored Cross-Site Scripting via t...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-8073
+  description: The Dynamic AJAX Product Filters for WooCommerce plugin for WordPress
+    is vulnerable to Stored Cross-Site Scripting via t...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53396
+  description: Incorrect permission assignment for critical resource issue exists
+    in SS1 Ver.16.0.0.10 and earlier (Media version:16.0....
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54540
+  description: "QuickCMS is vulnerable to Reflected XSS via\_sSort\_parameter in admin's\
+    \ panel functionality. A malicious attacker can cra..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54543
+  description: "QuickCMS is vulnerable to Stored XSS via\_sDescriptionMeta\_parameter\
+    \ in page editor SEO functionality. Malicious attacker..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54544
+  description: "QuickCMS is vulnerable to Stored XSS via\_aDirFilesDescriptions\_\
+    parameter in files editor functionality. Malicious attack..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55175
+  description: "QuickCMS is vulnerable to Reflected XSS via sLangEdit\_parameter in\
+    \ admin's panel functionality. A malicious attacker can..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-39496
+  description: Improper Neutralization of Special Elements used in an SQL Command
+    ('SQL Injection') vulnerability in WBW WooBeWoo Produ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48109
+  description: Cross-Site Request Forgery (CSRF) vulnerability in Xavier Media XM-Backup
+    allows Stored XSS. This issue affects XM-Backu...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48110
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in mibuthu Link View ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48304
+  description: Cross-Site Request Forgery (CSRF) vulnerability in Gary Illyes Google
+    XML News Sitemap plugin allows Stored XSS. This is...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48305
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in vikingjs Goal Trac...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48306
+  description: Cross-Site Request Forgery (CSRF) vulnerability in developers savyour
+    Savyour Affiliate Partner allows Stored XSS. This ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48307
+  description: Cross-Site Request Forgery (CSRF) vulnerability in kasonzhao SEO For
+    Images allows Stored XSS. This issue affects SEO Fo...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48308
+  description: Cross-Site Request Forgery (CSRF) vulnerability in nonletter Newsletter
+    subscription optin module allows Stored XSS. Thi...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48309
+  description: 'Cross-Site Request Forgery (CSRF) vulnerability in web-able BetPress
+    allows Stored XSS. This issue affects BetPress: fro...'
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48311
+  description: Cross-Site Request Forgery (CSRF) vulnerability in OffClicks Invisible
+    Optin allows Stored XSS. This issue affects Invis...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48312
+  description: "Improper Neutralization of Input During Web Page Generation ('Cross-site\
+    \ Scripting') vulnerability in \u6587\u6D3E\u7FFB\u8BD1\uFF08WP Chinese Tr..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48313
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in kevin heath Tripad...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48314
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in salubrio Add Code ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48315
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in stanton119 WordPre...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48316
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in ItayXD Responsive ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48319
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in gslauraspeck Mesa ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48320
+  description: "Cross-Site Request Forgery (CSRF) vulnerability in cuckoohello \u767E\
+    \u5EA6\u5206\u4EAB\u6309\u94AE allows Stored XSS. This issue affects \u767E\u5EA6\
+    \u5206\u4EAB\u6309\u94AE: from..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48321
+  description: Cross-Site Request Forgery (CSRF) vulnerability in dyiosah Ultimate
+    twitter profile widget allows Stored XSS. This issue...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48322
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in Finn Dohrn Statify...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48323
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in Md Abunaser Khan A...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48324
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in khashabawy tli.tl ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48325
+  description: Cross-Site Request Forgery (CSRF) vulnerability in shmish111 WP Admin
+    Theme allows Stored XSS. This issue affects WP Adm...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48343
+  description: Cross-Site Request Forgery (CSRF) vulnerability in Aaron Axelsen WPMU
+    Ldap Authentication allows Stored XSS. This issue ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48347
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in Vincent Mimoun-Pra...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48349
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in origincode Video G...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48351
+  description: Cross-Site Request Forgery (CSRF) vulnerability in PluginsPoint Kento
+    Splash Screen allows Stored XSS. This issue affect...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48352
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in sitesearch-yandex ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48353
+  description: Cross-Site Request Forgery (CSRF) vulnerability in dactum Clickbank
+    WordPress Plugin (Niche Storefront) allows Stored XS...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48354
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in WP Smart Widgets B...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48356
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in Isra Kanpress allo...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48358
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in everythingwp Risk ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48359
+  description: Cross-Site Request Forgery (CSRF) vulnerability in thaihavnn07 ATT
+    YouTube Widget allows Stored XSS. This issue affects ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48360
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in Razvan Stanga Varn...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-48365
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in imaprogrammer Cust...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-49404
+  description: Improper Neutralization of Special Elements used in an SQL Command
+    ('SQL Injection') vulnerability in purethemes Listeo-...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-49407
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in favethemes Houzez ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53215
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in 8bitkid Yahoo! Web...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53220
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in XmasB XmasB Quotes...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53223
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in undoIT Theme Switc...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53224
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in Koen Schuit NextGE...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53225
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in eboekhouden e-Boek...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53289
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in Jason Theme Blvd W...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-53579
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in captcha.eu Captcha...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54029
+  description: Improper Limitation of a Pathname to a Restricted Directory ('Path
+    Traversal') vulnerability in extendons WooCommerce cs...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54720
+  description: Improper Neutralization of Special Elements used in an SQL Command
+    ('SQL Injection') vulnerability in SteelThemes Nest A...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54724
+  description: Improper Neutralization of Input During Web Page Generation ('Cross-site
+    Scripting') vulnerability in uxper Golo allows ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58123
+  description: Improper Certificate Validation in Checkmk Exchange plugin BGP Monitoring
+    allows attackers in MitM position to intercept...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58124
+  description: Improper Certificate Validation in Checkmk Exchange plugin check-mk-api
+    allows attackers in MitM position to intercept t...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58125
+  description: Improper Certificate Validation in Checkmk Exchange plugin Freebox
+    v6 agent allows attackers in MitM position to interce...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58126
+  description: Improper Certificate Validation in Checkmk Exchange plugin VMware vSAN
+    allows attackers in MitM position to intercept tr...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58127
+  description: Improper Certificate Validation in Checkmk Exchange plugin Dell Powerscale
+    allows attackers in MitM position to intercep...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-49790
+  description: IBM Watson Studio on Cloud Pak for Data 4.0 and 5.0 is vulnerable to
+    cross-site scripting. This vulnerability allows an ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-51967
+  description: A Reflected Cross-site Scripting (XSS) vulnerability exists in the
+    themeSet.php file of ProjectsAndPrograms School Manag...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-51968
+  description: A SQL Injection vulnerability exists in the action.php file of PuneethReddyHC
+    Online Shopping System Advanced 1.0. The a...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-51969
+  description: A SQL Injection vulnerability exists in the product.php page of PuneethReddyHC
+    Online Shopping System Advanced 1.0. This...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-51971
+  description: A reflected Cross-Site Scripting (XSS) vulnerability exists in register.php
+    of PuneethReddyHC Online Shopping System Adv...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-51972
+  description: A SQL Injection vulnerability exists in the login.php of PuneethReddyHC
+    Online Shopping System Advanced 1.0 due to impro...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-48908
+  description: lychee link checking action checks links in Markdown, HTML, and text
+    files using lychee. Prior to version 2.0.2, there i...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54995
+  description: Asterisk is an open source private branch exchange and telephony toolkit.
+    Prior to versions 18.26.4 and 18.9-cert17, RTP...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-56236
+  description: FormCms v0.5.5 contains a stored cross-site scripting (XSS) vulnerability
+    in the avatar upload feature. Authenticated us...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-13986
+  description: 'Nagios XI < 2024R1.3.2 contains a remote code execution vulnerability
+    by chaining two flaws: an arbitrary file upload an...'
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57767
+  description: Asterisk is an open source private branch exchange and telephony toolkit.
+    Prior to versions 20.15.2, 21.10.2, and 22.5.2...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-31979
+  description: A File Upload Validation Bypass vulnerability has been identified in
+    the HCL BigFix SM, where the application fails to p...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57756
+  description: Contao is an Open Source CMS. In versions starting from 4.9.14 and
+    prior to 4.13.56, 5.3.38, and 5.6.1, protected conten...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57757
+  description: Contao is an Open Source CMS. In versions starting from 5.0.0 and prior
+    to 5.3.38 and 5.6.1, if a news feed contains pro...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57758
+  description: Contao is an Open Source CMS. In versions starting from 5.0.0 and prior
+    to 5.3.38 and 5.6.1, the table access voter in t...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57759
+  description: Contao is an Open Source CMS. In versions starting from 5.3.0 and prior
+    to 5.3.38 and 5.6.1, under certain conditions, b...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57819
+  description: FreePBX is an open-source web-based graphical user interface. FreePBX
+    15, 16, and 17 endpoints are vulnerable due to ins...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58048
+  description: Paymenter is a free and open-source webshop solution for hostings.
+    Prior to version 1.2.11, the ticket attachments funct...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58059
+  description: Valtimo is a platform for Business Process Automation. In versions
+    before 12.16.0.RELEASE, and from 13.0.0.RELEASE to be...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9592
+  description: A vulnerability was detected in itsourcecode Apartment Management System
+    1.0. This issue affects some unknown processing...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9593
+  description: A flaw has been found in itsourcecode Apartment Management System 1.0.
+    Impacted is an unknown function of the file /repo...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9594
+  description: A vulnerability has been found in itsourcecode Apartment Management
+    System 1.0. The affected element is an unknown funct...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9596
+  description: A vulnerability was determined in itsourcecode Sports Management System
+    1.0. This affects an unknown function of the fil...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9597
+  description: A vulnerability was identified in itsourcecode Apartment Management
+    System 1.0. This impacts an unknown function of the ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9598
+  description: A security flaw has been discovered in itsourcecode Apartment Management
+    System 1.0. Affected is an unknown function of ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-40927
+  description: 'CGI::Simple versions before 1.282 for Perl has a HTTP response splitting
+    flaw
 
-  - id: sql_injection
-    regex: "(?i)(union select|drop table|or 1=1)"
-    description: "Detects basic SQL injection attempts"
-
-  - id: xss
-    regex: "(?i)(<script>|onerror=|javascript:)"
-    description: "Detects potential XSS attempts"
+    This vulnerability is a confirmed HTTP res...'
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-43187
+  description: This issue was addressed by removing the vulnerable code. This issue
+    is fixed in macOS Sonoma 14.7.7, macOS Ventura 13.7...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9599
+  description: A weakness has been identified in itsourcecode Apartment Management
+    System 1.0. Affected by this vulnerability is an unk...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9600
+  description: A security vulnerability has been detected in itsourcecode Apartment
+    Management System 1.0. Affected by this issue is so...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9601
+  description: A vulnerability was detected in itsourcecode Apartment Management System
+    1.0. This affects an unknown part of the file /...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9606
+  description: A vulnerability was detected in Portabilis i-Educar up to 2.10. Affected
+    by this vulnerability is an unknown functionali...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9607
+  description: A flaw has been found in Portabilis i-Educar up to 2.10. Affected by
+    this issue is some unknown functionality of the fil...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9608
+  description: A vulnerability has been found in Portabilis i-Educar up to 2.10. This
+    affects an unknown part of the file /module/Formu...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-8857
+  description: Clinic Image System developed by Changing contains hard-coded Credentials,
+    allowing unauthenticated remote attackers to ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-8858
+  description: Clinic Image System developed by Changing has a SQL Injection vulnerability,
+    allowing unauthenticated remote attackers t...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9610
+  description: A vulnerability was determined in code-projects Online Event Judging
+    System 1.0. This issue affects some unknown process...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9619
+  description: A security flaw has been discovered in E4 Sistemas Mercatus ERP 2.00.019.
+    The affected element is an unknown function of...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-8290
+  description: "The List Subpages plugin for WordPress is vulnerable to Stored Cross-Site\
+    \ Scripting via the \u2018title\u2019 parameter in all ver..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-8619
+  description: The OSM Map Widget for Elementor plugin for WordPress is vulnerable
+    to Stored Cross-Site Scripting via the plugin's Map ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9441
+  description: "The iATS Online Forms plugin for WordPress is vulnerable to time-based\
+    \ SQL Injection via the \u2018order' parameter in all ve..."
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-13987
+  description: Improper neutralization of input during web page generation ('Cross-site
+    Scripting') vulnerability in Synology RADIUS Se...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-8150
+  description: The Events Addon for Elementor plugin for WordPress is vulnerable to
+    Stored Cross-Site Scripting via the plugin's Typewr...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-4643
+  description: Payload uses JSON Web Tokens (JWT) for authentication. After log out
+    JWT is not invalidated, which allows an attacker wh...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-4644
+  description: A Session Fixation vulnerability existed in Payload's SQLite adapter
+    due to identifier reuse during account creation. A ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-13342
+  description: The Booster for WooCommerce plugin for WordPress is vulnerable to arbitrary
+    file uploads due to missing file type valida...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-40702
+  description: Cross-Site Scripting (XSS) vulnerability in OpenAtlas v8.9.0 from the
+    Austrian Centre for Digital Humanities and Cultura...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-40703
+  description: Cross-Site Scripting (XSS) vulnerability in OpenAtlas v8.9.0 from the
+    Austrian Centre for Digital Humanities and Cultura...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-40704
+  description: Cross-Site Scripting (XSS) vulnerability in OpenAtlas v8.9.0 from the
+    Austrian Centre for Digital Humanities and Cultura...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-40705
+  description: Cross-Site Scripting (XSS) vulnerability in OpenAtlas v8.9.0 from the
+    Austrian Centre for Digital Humanities and Cultura...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-40706
+  description: Cross-Site Scripting (XSS) vulnerability in OpenAtlas v8.9.0 from the
+    Austrian Centre for Digital Humanities and Cultura...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-40707
+  description: Cross-Site Scripting (XSS) vulnerability in OpenAtlas v8.9.0 from the
+    Austrian Centre for Digital Humanities and Cultura...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-40708
+  description: Cross-Site Scripting (XSS) vulnerability in OpenAtlas v8.9.0 from the
+    Austrian Centre for Digital Humanities and Cultura...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-40709
+  description: Cross-Site Scripting (XSS) vulnerability in OpenAtlas v8.9.0 from the
+    Austrian Centre for Digital Humanities and Cultura...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9643
+  description: A vulnerability was found in itsourcecode Apartment Management System
+    1.0. Affected by this vulnerability is an unknown ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9644
+  description: A vulnerability was determined in itsourcecode Apartment Management
+    System 1.0. Affected by this issue is some unknown f...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9645
+  description: A vulnerability was identified in itsourcecode Apartment Management
+    System 1.0. This affects an unknown part of the file...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9651
+  description: A vulnerability was found in shafhasan chatbox up to 156a39cde62f78532c3265a70eda12c70907e56f.
+    This impacts an unknown f...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54877
+  description: Tuleap is an Open Source Suite created to facilitate management of
+    software development and collaboration. In Tuleap Com...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55202
+  description: Opencast is a free, open-source platform to support the management
+    of educational audio and video content. In version 18...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-12923
+  description: A cross-site scripting (XSS) vulnerability has been reported to affect
+    Photo Station. If a remote attacker gains a user ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-22483
+  description: A cross-site scripting (XSS) vulnerability has been reported to affect
+    several QNAP operating system versions. If a remo...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55579
+  description: SolidInvoice 2.3.7 and fixed in v.2.3.8 is vulnerable to Cross Site
+    Scripting (XSS) in the Tax Rate functionality....
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55580
+  description: SolidInvoice 2.3.7 and v.2.3.8 is vulnerable to Cross Site Scripting
+    (XSS) in the client's functionality....
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55763
+  description: Buffer Overflow in the URI parser of CivetWeb 1.14 through 1.16 (latest)
+    allows a remote attacker to achieve remote code...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9660
+  description: A vulnerability was found in SourceCodester Bakeshop Online Ordering
+    System 1.0. The impacted element is an unknown func...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9662
+  description: A vulnerability was determined in code-projects Simple Grading System
+    1.0. This affects an unknown function of the file ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9663
+  description: A vulnerability was identified in code-projects Simple Grading System
+    1.0. This impacts an unknown function of the file ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9664
+  description: A security flaw has been discovered in code-projects Simple Grading
+    System 1.0. Affected is an unknown function of the f...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-29890
+  description: An allocation of resources without limits or throttling vulnerability
+    has been reported to affect File Station 5. If a r...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-29893
+  description: An SQL injection vulnerability has been reported to affect Qsync Central.
+    If a remote attacker gains a user account, the...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-29894
+  description: An SQL injection vulnerability has been reported to affect Qsync Central.
+    If a remote attacker gains a user account, the...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-29898
+  description: An uncontrolled resource consumption vulnerability has been reported
+    to affect Qsync Central. If a remote attacker gains...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-29899
+  description: An allocation of resources without limits or throttling vulnerability
+    has been reported to affect File Station 5. If a r...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-29900
+  description: An allocation of resources without limits or throttling vulnerability
+    has been reported to affect File Station 5. If a r...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-30260
+  description: An allocation of resources without limits or throttling vulnerability
+    has been reported to affect Qsync Central. If a re...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-30261
+  description: An allocation of resources without limits or throttling vulnerability
+    has been reported to affect Qsync Central. If a re...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-44033
+  description: SQL injection vulnerability in oa_system oasys v.1.1 allows a remote
+    attacker to execute arbitrary code via the allDirec...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58158
+  description: Harness Open Source is an end-to-end developer platform with Source
+    Control Management, CI/CD Pipelines, Hosted Develope...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9377
+  description: "The authenticated remote command execution (RCE) vulnerability exists\
+    \  in the Parental Control page\_on\_TP-Link Archer C7..."
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9665
+  description: A weakness has been identified in code-projects Simple Grading System
+    1.0. Affected by this vulnerability is an unknown ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9666
+  description: A security vulnerability has been detected in code-projects Simple
+    Grading System 1.0. Affected by this issue is some un...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2023-41471
+  description: Cross Site Scripting vulnerability in copyparty v.1.9.1 allows a local
+    attacker to execute arbitrary code via a crafted ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9667
+  description: A vulnerability was detected in code-projects Simple Grading System
+    1.0. This affects an unknown part of the file /delet...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9669
+  description: A vulnerability has been found in Jinher OA 1.0. This issue affects
+    some unknown processing of the file GetTreeDate.aspx...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55173
+  description: Next.js is a React framework for building full-stack web applications.
+    In versions before 14.2.31 and from 15.0.0 to bef...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9678
+  description: A weakness has been identified in Campcodes Online Loan Management
+    System 1.0. The impacted element is an unknown functi...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-58159
+  description: WeGIA is a Web manager for charitable institutions. Prior to version
+    3.4.11, a remote code execution vulnerability was i...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-34164
+  description: "A heap-based buffer overflow vulnerability in NetSupport Manager\_\
+    14.x versions prior to 14.12.0000 allows a remote, unau..."
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54944
+  description: An unrestricted upload of file with dangerous type vulnerability in
+    SUNNET Corporate Training Management System before 1...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-54946
+  description: A SQL injection vulnerability in SUNNET Corporate Training Management
+    System before 10.11 allows remote attackers to exe...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9499
+  description: The Ocean Extra plugin for WordPress is vulnerable to Stored Cross-Site
+    Scripting via the plugin's oceanwp_library short...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9500
+  description: "The TablePress plugin for WordPress is vulnerable to Stored Cross-Site\
+    \ Scripting via the \u2018shortcode_debug\u2019 parameter in ..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9679
+  description: A security vulnerability has been detected in itsourcecode Student
+    Information System 1.0. This affects an unknown funct...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9684
+  description: A vulnerability was determined in Portabilis i-Educar up to 2.10. This
+    affects an unknown part of the file /module/Formu...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9685
+  description: A vulnerability was identified in Portabilis i-Educar up to 2.10. This
+    vulnerability affects unknown code of the file /m...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9686
+  description: A security flaw has been discovered in Portabilis i-Educar up to 2.10.
+    This issue affects some unknown processing of the...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-0165
+  description: IBM watsonx Orchestrate Cartridge for IBM Cloud Pak for Data 4.8.4,
+    4.8.5, and 5.0.0 through 5.2.0 is vulnerable to SQL ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9689
+  description: A vulnerability was detected in SourceCodester Advanced School Management
+    System 1.0. The impacted element is an unknown...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2008-20001
+  description: activePDF WebGrabber version 3.8.2.0 contains a stack-based buffer
+    overflow vulnerability in the GetStatus() method of t...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2009-20008
+  description: Green Dam Youth Escort version 3.17 is vulnerable to a stack-based
+    buffer overflow when processing overly long URLs. The...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2009-20009
+  description: Belkin Bulldog Plus version 4.0.2 build 1219 contains a stack-based
+    buffer overflow vulnerability in its web service aut...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2010-10017
+  description: WM Downloader version 3.1.2.2 is vulnerable to a buffer overflow when
+    processing a specially crafted .m3u playlist file....
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2011-10032
+  description: Sunway ForceControl version 6.1 SP3 and earlier contains a stack-based
+    buffer overflow vulnerability in the SNMP NetDBSe...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2012-10062
+  description: A vulnerability in XAMPP, developed by Apache Friends, version 1.7.3's
+    default WebDAV configuration allows remote authen...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9690
+  description: A flaw has been found in SourceCodester Advanced School Management
+    System 1.0. This affects an unknown function of the f...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9691
+  description: A vulnerability has been found in Campcodes Online Shopping System
+    1.0. This impacts an unknown function of the file /lo...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9692
+  description: A vulnerability was found in Campcodes Online Shopping System 1.0.
+    Affected is an unknown function of the file /product....
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9694
+  description: A vulnerability was determined in Campcodes Advanced Online Voting
+    System 1.0. Affected by this vulnerability is an unkn...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9699
+  description: A vulnerability was detected in SourceCodester Online Polling System
+    Code 1.0. This vulnerability affects unknown code o...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9700
+  description: A flaw has been found in SourceCodester Online Book Store 1.0. This
+    issue affects some unknown processing of the file /p...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9701
+  description: A vulnerability was determined in SourceCodester Simple Cafe Billing
+    System 1.0. The impacted element is an unknown func...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9702
+  description: A vulnerability was identified in SourceCodester Simple Cafe Billing
+    System 1.0. This affects an unknown function of the...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9704
+  description: A security flaw has been discovered in SourceCodester Water Billing
+    System 1.0. This impacts an unknown function of the ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9705
+  description: A weakness has been identified in SourceCodester Water Billing System
+    1.0. Affected is an unknown function of the file /...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9706
+  description: A security vulnerability has been detected in SourceCodester Water
+    Billing System 1.0. Affected by this vulnerability is...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-5083
+  description: The Amministrazione Trasparente plugin for WordPress is vulnerable
+    to Stored Cross-Site Scripting via admin settings in ...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9726
+  description: A security flaw has been discovered in Campcodes Farm Management System
+    1.0. Affected by this vulnerability is an unknow...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9729
+  description: A vulnerability was detected in PHPGurukul Online Course Registration
+    3.1. This vulnerability affects unknown code of th...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9730
+  description: A vulnerability was found in itsourcecode Apartment Management System
+    1.0. The affected element is an unknown function o...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9733
+  description: A security flaw has been discovered in code-projects Human Resource
+    Integrated System 1.0. This impacts an unknown funct...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9739
+  description: A vulnerability has been found in Campcodes Online Water Billing System
+    1.0. Affected by this issue is some unknown func...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9740
+  description: A vulnerability was found in code-projects Human Resource Integrated
+    System 1.0. This affects an unknown part of the fil...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9741
+  description: A vulnerability was determined in code-projects Human Resource Integrated
+    System 1.0. This vulnerability affects unknown...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9742
+  description: A vulnerability was identified in code-projects Human Resource Integrated
+    System 1.0. This issue affects some unknown pr...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9743
+  description: A security flaw has been discovered in code-projects Human Resource
+    Integrated System 1.0. Impacted is an unknown functi...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9744
+  description: A weakness has been identified in Campcodes Online Loan Management
+    System 1.0. The affected element is an unknown functi...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9749
+  description: A vulnerability was identified in HKritesh009 Grocery List Management
+    Web App up to f491b681eb70d465f445c9a721415c965190...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9750
+  description: A security flaw has been discovered in Campcodes Online Learning Management
+    System 1.0. This vulnerability affects unkno...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9751
+  description: A weakness has been identified in Campcodes Online Learning Management
+    System 1.0. This issue affects some unknown proce...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9756
+  description: A vulnerability was found in PHPGurukul User Management System 1.0.
+    This impacts an unknown function of the file /admin/...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9567
+  description: The eHRD developed by Sunnet has a Reflected Cross-site Scripting vulnerability,
+    allowing unauthenticated remote attacke...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9568
+  description: The eHRD developed by Sunnet has a Reflected Cross-site Scripting vulnerability,
+    allowing unauthenticated remote attacke...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9569
+  description: The eHRD developed by Sunnet has a Reflected Cross-site Scripting vulnerability,
+    allowing unauthenticated remote attacke...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9757
+  description: A vulnerability was determined in Campcodes/SourceCodester Courier
+    Management System 1.0. Affected is the function Login...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-7731
+  description: Cleartext Transmission of Sensitive Information vulnerability in Mitsubishi
+    Electric Corporation MELSEC iQ-F Series CPU ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9758
+  description: A vulnerability was identified in deepakmisal24 Chemical Inventory
+    Management System up to 1.0. Affected by this vulnera...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9759
+  description: A security flaw has been discovered in Campcodes/SourceCodester Courier
+    Management System 1.0. Affected by this issue is...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9761
+  description: A security vulnerability has been detected in Campcodes Online Feeds
+    Product Inventory System 1.0. This vulnerability af...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9763
+  description: A vulnerability was detected in Campcodes Online Learning Management
+    System 1.0. This issue affects some unknown process...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-6507
+  description: A vulnerability in the h2oai/h2o-3 repository allows attackers to exploit
+    deserialization of untrusted data, potentially...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9764
+  description: A flaw has been found in itsourcecode Sports Management System 1.0.
+    Impacted is an unknown function of the file /Admin/r...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9765
+  description: A vulnerability has been found in itsourcecode Sports Management System
+    1.0. The affected element is an unknown function...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9766
+  description: A vulnerability was found in itsourcecode Sports Management System
+    1.0. The impacted element is an unknown function of t...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9767
+  description: A vulnerability was determined in itsourcecode Sports Management System
+    1.0. This affects an unknown function of the fil...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9768
+  description: A vulnerability was identified in itsourcecode Sports Management System
+    1.0. This impacts an unknown function of the fil...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9770
+  description: A weakness has been identified in Campcodes Hospital Management System
+    1.0. Affected by this vulnerability is an unknown...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9771
+  description: A security vulnerability has been detected in SourceCodester Eye Clinic
+    Management System 1.0. Affected by this issue is...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-12914
+  description: "Improper Neutralization of Input During Web Page Generation (XSS or\
+    \ 'Cross-site Scripting') vulnerability in Ak\u0131nsoft QR..."
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-12924
+  description: "URL Redirection to Untrusted Site ('Open Redirect') vulnerability\
+    \ in Ak\u0131nsoft QR Men\xFC allows Forceful Browsing, Phishing..."
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-0656
+  description: IBM Concert Software 1.0.0 through 1.1.0 is vulnerable to cross-site
+    scripting. This vulnerability allows an unauthentic...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-33082
+  description: IBM Concert Software 1.0.0 through 1.1.0 is vulnerable to cross-site
+    scripting. This vulnerability allows an authenticat...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-33083
+  description: IBM Concert Software 1.0.0 through 1.1.0 is vulnerable to cross-site
+    scripting. This vulnerability allows an authenticat...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-55007
+  description: Knowage is an open source analytics and business intelligence suite.
+    Prior to version 8.1.37, Knowage is vulnerable to s...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9786
+  description: A vulnerability was found in Campcodes Online Learning Management System
+    1.0. Affected is an unknown function of the fil...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-3586
+  description: In Liferay Portal 7.4.3.27 through 7.4.3.42, and Liferay DXP 2024.Q1.1
+    through 2024.Q1.20, 2023.Q4.0 through 2023.Q4.10,...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9788
+  description: A vulnerability was determined in SourceCodester/Campcodes School Log
+    Management System 1.0. Affected by this vulnerabil...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9789
+  description: A vulnerability was identified in SourceCodester Online Hotel Reservation
+    System 1.0. Affected by this issue is some unk...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9790
+  description: A security flaw has been discovered in SourceCodester Hotel Reservation
+    System 1.0. This affects an unknown part of the ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9809
+  description: Out-of-bounds write in cdfs_open_cue_track in libretro libretro-common
+    latest on all platforms allows remote attackers t...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9792
+  description: A security vulnerability has been detected in itsourcecode Apartment
+    Management System 1.0. This issue affects some unkn...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9793
+  description: A vulnerability was detected in itsourcecode Apartment Management System
+    1.0. Impacted is an unknown function of the fil...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9794
+  description: A flaw has been found in Campcodes Computer Sales and Inventory System
+    1.0. The affected element is an unknown function ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-28988
+  description: SolarWinds Web Help Desk was found to be susceptible to a Java Deserialization
+    Remote Code Execution vulnerability that,...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9802
+  description: A vulnerability was detected in RemoteClinic 2.0. This vulnerability
+    affects unknown code of the file /staff/profile.php...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9811
+  description: A vulnerability was found in Campcodes Farm Management System 1.0.
+    This affects an unknown part of the file /reviewInput...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-9814
+  description: A security flaw has been discovered in PHPGurukul Beauty Parlour Management
+    System 1.1. Impacted is an unknown function ...
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-12972
+  description: Improper Neutralization of Input During Web Page Generation (XSS or
+    'Cross-site Scripting') vulnerability in Akinsoft Oc...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-12973
+  description: Origin Validation Error vulnerability in Akinsoft OctoCloud allows
+    HTTP Response Splitting, CAPEC - 87 - Forceful Browsi...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-52284
+  description: 'Unauthorized disclosure of sensitive data: Any user with `GET` or
+    `LIST` permissions on `BundleDeployment` resources cou...'
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-58259
+  description: "A vulnerability has been identified within Rancher Manager in which\
+    \ it \ndid not enforce request body size limits on cert..."
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-0640
+  description: Authorization Bypass Through User-Controlled Key vulnerability in Akinsoft
+    OctoCloud allows Resource Leak Exposure.This ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-52546
+  description: E3 Site Supervisor Control (firmware version < 2.31F01) has a floor
+    plan feature that allows for an unauthenticated atta...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-57140
+  description: rsbi-pom 4.7 is vulnerable to SQL Injection in the /bi/service/model/DatasetService
+    path....
+  payloads: *id003
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-5662
+  description: A deserialization vulnerability exists in the H2O-3 REST API (POST
+    /99/ImportSQLTable) that affects all versions up to 3...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
+- name: CVE-2024-12974
+  description: Improper Neutralization of Input During Web Page Generation (XSS or
+    'Cross-site Scripting') vulnerability in Akinsoft Pr...
+  payloads: *id001
+  method: GET
+  parameter: input
+  simulation_only: true
+- name: CVE-2025-0670
+  description: Authorization Bypass Through User-Controlled Key vulnerability in Akinsoft
+    ProKuafor allows Resource Leak Exposure.This ...
+  payloads: *id002
+  method: POST
+  parameter: input
+  simulation_only: true
