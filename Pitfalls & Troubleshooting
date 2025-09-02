@@ -1,0 +1,234 @@
+# ⚠️ Troubleshooting & Potential Issues
+
+This section covers **common problems**, possible causes, and solutions for users running your Local AI Vulnerability Scanning Agent.
+
+---
+
+## 1️⃣ **Virtual Environment Issues**
+
+**Problem:** `ModuleNotFoundError` or `ImportError` for packages like `faiss`, `sentence-transformers`, `requests`.
+
+**Cause:** Packages not installed in the active Python environment.
+
+**Solution:**
+
+```bash
+# Activate venv first
+source venv/bin/activate
+
+# Install required packages
+python -m pip install --upgrade pip setuptools wheel
+python -m pip install -r requirements.txt
+```
+
+**Tip:** Always run scripts from the activated virtual environment.
+
+---
+
+## 2️⃣ **Permission Errors During Package Install**
+
+**Example:**
+
+```
+OSError: [Errno 13] Permission denied: '/home/vboxuser/.../venv/lib/python3.12/site-packages/wheel'
+```
+
+**Cause:** Files in `venv` may have incorrect permissions.
+
+**Solution:**
+
+```bash
+# Fix permissions recursively in venv
+sudo chown -R $USER:$USER venv/
+```
+
+---
+
+## 3️⃣ **CVE JSON Format Changes / KeyError**
+
+**Example:**
+
+```
+KeyError: 'CVE_Items'
+```
+
+**Cause:** The NVD JSON 2.0 format uses `vulnerabilities` instead of `CVE_Items`.
+
+**Solution:**
+
+* Update scripts like `generate_patterns.py` to use:
+
+```python
+for item in cve_data["vulnerabilities"]:
+    cve = item["cve"]
+```
+
+* Ensure you are using the **latest CVE feed**.
+
+---
+
+## 4️⃣ **Patterns YAML Parsing Errors**
+
+**Example:**
+
+```
+KeyError: 'regex'
+```
+
+**Cause:** `patterns.yml` may be structured as a dict (`patterns: []`) instead of a flat list.
+
+**Solution:**
+
+* Flatten YAML for your scanner:
+
+```yaml
+# Correct format for scanner
+- name: sql_injection
+  regex: "(?i)(union select|drop table|or 1=1)"
+  description: "Detects SQLi attempts"
+```
+
+* Or update `scanner.py` to handle dict-based YAML:
+
+```python
+patterns = y.get("patterns", [])
+for p in patterns:
+    regex = re.compile(p.get("regex") or ".*")
+```
+
+---
+
+## 5️⃣ **Docker Container Conflicts**
+
+**Problem:**
+
+```
+docker: Error response from daemon: Conflict. The container name "/lab-web" is already in use
+```
+
+**Solution:**
+
+```bash
+docker rm -f lab-web       # Remove old container
+docker run -d --name lab-web -p 8080:80 vuln-apache
+```
+
+---
+
+## 6️⃣ **Apache Warning on Container Start**
+
+**Message:**
+
+```
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name
+```
+
+**Cause:** Default Apache config.
+
+**Solution:** Usually safe to ignore. To suppress, add `ServerName localhost` in `/etc/apache2/apache2.conf` inside container.
+
+---
+
+## 7️⃣ **Log Files Missing or Empty**
+
+**Problem:** Logs not created for cron jobs.
+
+**Cause:** Cron job never ran or log directory doesn’t exist.
+
+**Solution:**
+
+```bash
+mkdir -p logs            # Ensure log folder exists
+chmod 755 logs           # Set permissions
+# Manually run scripts once to generate logs
+python update_cve_db.py
+python generate_patterns.py
+python build_index.py
+```
+
+---
+
+## 8️⃣ **FAISS / Memory Issues**
+
+**Problem:** `faiss` indexing fails or consumes too much memory.
+
+**Cause:** Large CVE datasets and embedding vectors.
+
+**Solution:**
+
+* Limit CVEs processed using `TARGET_SOFTWARE` or `version filters` in `generate_patterns.py`.
+* Increase RAM or use **FAISS CPU-only index** as in your requirements.
+
+---
+
+## 9️⃣ **Cron Jobs Not Running**
+
+**Check:**
+
+```bash
+crontab -l
+```
+
+**Logs:**
+
+```bash
+tail -f logs/cve_update.log
+tail -f logs/pattern_update.log
+tail -f logs/index_build.log
+```
+
+**Common Fix:** Cron uses different environment variables; always use **absolute paths** and specify Python from venv.
+
+---
+
+## 🔟 **Simulator URL Issues**
+
+* Ensure the target URL is reachable:
+
+```bash
+python ai_agent.py --simulate "http://localhost:8080/"
+```
+
+* Use Docker container for safe local testing.
+
+---
+
+## 1️⃣1️⃣ **Patterns Not Being Added**
+
+* Check `data/nvd/recent.json` has entries.
+* Ensure `SOFTWARE_FILTER` or version filter is not too restrictive.
+* Verify `simulation_only: true` is added for safety.
+
+---
+
+## 1️⃣2️⃣ **Best Practices for Users**
+
+* Always test **locally in Docker**.
+* Keep **logs and archive directories** organized.
+* Regularly **update CVE database** (`update_cve_db.py`).
+* Use **semantic classification** with FAISS for smarter detection.
+* Never run simulated payloads against production systems.
+
+---
+
+## 1️⃣3️⃣ **Advanced Troubleshooting**
+
+| Issue                       | Check                    | Action                                                                   |
+| --------------------------- | ------------------------ | ------------------------------------------------------------------------ |
+| Scanner fails with regex    | `rules/patterns.yml`     | Ensure regex exists for all patterns                                     |
+| FAISS build fails           | RAM / Python environment | Use CPU-only, update `faiss-cpu`                                         |
+| Cron fails silently         | Environment paths        | Add absolute paths to python & scripts, redirect stdout & stderr to logs |
+| Patterns not detecting CVEs | `recent.json`            | Make sure JSON format matches `vulnerabilities` key                      |
+
+---
+
+## ✅ **Summary for GitHub Users**
+
+1. Activate `venv`
+2. Update CVE DB
+3. Generate patterns
+4. Build FAISS index
+5. Run scanner / AI agent
+6. Check logs if errors occur
+7. Use Docker for safe testing
+8. Archive old files to prevent overload
